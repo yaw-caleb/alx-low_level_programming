@@ -1,11 +1,20 @@
 #include <stdio.h>
 
-int main (){
+/**
+ * main - main program function for script
+ * Description: this file to print out the strings in the array
+ * Return: return value of zero to terminate programm
+ */
 
-	/*String Initialization*/
+int main(void)
+
+{
+	/* String declaration */
+
 	char MyStrg[] = "Programming is like building a multilingual puzzle";
 
-	puts(MyStrg);/*printing string to stdout*/
+	puts(MyStrg); /*printing to stdout */
 
-	return 0;
+	return (0);
 }
+
