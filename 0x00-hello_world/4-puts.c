@@ -11,7 +11,7 @@ int main(void)
 {
 	/* String declaration */
 
-	char MyStrg[] = "Programming is like building a multilingual puzzle";
+	char MyStrg[] = "\"Programming is like building a multilingual puzzle";
 
 	puts(MyStrg); /*printing to stdout */
 
