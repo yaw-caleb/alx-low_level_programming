@@ -1,20 +1,6 @@
 #include "main.h"
 
 /**
- * main - main function where all code is executed
- *
- * Description: a program to print lower case alphabets using putchar
- *
- * Return: Returns a value of 0
- */
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
-/**
  * print_alphabet - prints using putchar
  *
  * Description:  print out lower case alphabet
