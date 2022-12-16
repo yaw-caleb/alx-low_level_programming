@@ -10,40 +10,23 @@ int main(void)
 {
 	int i;
 
+	char f[] = "Fizz";
+	char k[] = "Buzz";
+	char j[] = "FizzBuzz";
+
 	for (i = 1; i <= 100; i++)
 	{
-		if (i % 15 == 0)
-		{
-			printf("FizzBuzz");
-			printf(" ");
-		}
-
-		else if ((i % 3) == 0)
-		{
-			printf("Fizz");
-			printf(" ");
-		}
-
-		else if ((i % 5) == 0)
-		{
-			printf("Buzz");
-			printf(" ");
-		}
-
-		else if (i == 100)
-		{
-			printf("Buzz");
-		}
-
+		if (i == 100)
+			printf("%s", k);
+		else if ((i % 3 == 0) && (i % 5 == 0))
+			printf("%s ", j);
+		else if (i % 3 == 0)
+			printf("%s ", f);
+		else if (i % 5 == 0)
+			printf("%s ", k);
 		else
-		{
-			printf("%d", i);
-			printf(" ");
-		}
-
+			printf("%d ", i);
 	}
-
 	printf("\n");
-
 	return (0);
 }
