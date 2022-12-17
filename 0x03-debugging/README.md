@@ -1,1 +1,1 @@
-A non empty readme
+A non empty readme for the debug repository
