@@ -11,16 +11,16 @@
 void print_rev(char *s)
 {
 	int i;
+	int n;
 	int sum = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		sum++;
 	}
-	while (sum >= 0)
+	for (n = (sum - 1); n >= 0; n--)
 	{
-		_putchar(s[sum]);
-		sum--;
+		_putchar(s[n]);
 	}
 	_putchar('\n');
 }
