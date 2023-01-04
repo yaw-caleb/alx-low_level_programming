@@ -12,28 +12,27 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, n, val, ckd;
+	unsigned int i = 0;
+	unsigned int b;
+	unsigned int ckd = 0;
 
-	for (i  = 0; s[i] != '\0'; i++)
+	while (accept[i])
 	{
-		ckd = 0;
+		b = 0;
 
-		for (n = 0; accept[n]  != '\0'; n++)
+		while (s[b] != 32)
 		{
-			if (accept[n] == s[i])
+			if (accept[i] == s[b])
 			{
-				val++;
-				ckd = 1;
+				ckd++;
 			}
 
+			b++;
 		}
 
-		if (ckd == 0)
-		{
-			return (val);
-		}
+		i++;
+
 	}
 
-	return (val);
-
+	return (ckd);
 }
