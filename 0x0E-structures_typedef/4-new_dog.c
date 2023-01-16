@@ -1,57 +1,53 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
-
+int get_len(int i);
+char *str_cpy(char *dest, char *src);
 /**
- * new_dog - creates a new dog
- * @name: dog's name
- * @age: dog's age
- * @owner: dog's owner
- *
- * Return: a pointer to the structure
+ * new_dog - a function that creates a new dog
+ * get len of name + owner, malloc them, cpy name + owner to new
+ * @name: name
+ * @age: age
+ * @owner: owner
+ * Return: 0
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i;
-	int j;
-	int k;
+	dog_t *new_name;
+	char *copy_name, *copy_owner;
+	unsigned int x, name_len = 0, owner_len = 0;
 
-	dog_t *p;
-
-	p = malloc(sizeof(dog_t));
-
-	if (p == NULL)
+	new_name = malloc(sizeof(dog_t));
+	if (name == NULL)
+		return (NULL);
+	if (name == NULL || age <= 0 || owner == NULL)
 	{
-		free(p);
+		free(new_name);
 		return (NULL);
 	}
 
-	for (i = 0; name[i]; i++)
-		;
-	for (j = 0; owner[j]; j++)
-		;
-	p->name = malloc(i + 1);
-	p->owner = malloc(j + 1);
+	for (x = 0; name[x] != '\0'; x++)
+		name_len++;
 
-	if (p->name == NULL || p->owner == NULL)
-	{
-		free(p->name), free(p->owner), free(p);
+	for (x = 0; owner[x] != '\0'; x++)
+		owner_len++;
+
+	copy_name = malloc(sizeof(char) * (name_len + 1));
+	if (copy_name == NULL)
 		return (NULL);
-	}
 
-	for (k = 0; k < i; k++)
-	{
-		p->name[k] = name[k];
-	}
-	p->name[k] = '\0';
+	copy_owner = malloc(sizeof(char) * (owner_len + 1));
+	if (copy_owner == NULL)
+		return (NULL);
 
-	for (k = 0; k < j; k++)
-	{
-		p->owner[k] = owner[k];
-	}
+	for (x = 0; x <= name_len; x++)
+		copy_name[x] = name[x];
 
-	p->owner[k] = '\0';
-	p->age = age;
-	return (p);
+	for (x = 0; x <= owner_len; x++)
+		copy_owner[x] = owner[x];
+
+	new_name->name = copy_name;
+	new_name->owner = copy_owner;
+	new_name->age = age;
+	return (new_name);
 }
